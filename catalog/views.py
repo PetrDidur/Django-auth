@@ -13,7 +13,7 @@ class ProductListView(ListView):
 
 
 class ContactsView(View):
-    template_name = 'catalog/contacts_detail'
+    template_name = 'catalog/contacts_detail.html'
 
     def get(self, request):
         return render(request, self.template_name)
@@ -72,8 +72,6 @@ class ProductUpdateView(UpdateView):
             formset.instance = self.object
             formset.save()
         return super().form_valid(form)
-
-
 
 
 class ProductDeleteView(DeleteView):
